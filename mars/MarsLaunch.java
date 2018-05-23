@@ -238,7 +238,20 @@ public class MarsLaunch {
     // launching the GUI-fronted integrated development environment.
 
     private void launchIDE() {
-        // System.setProperty("apple.laf.useScreenMenuBar", "true"); // Puts MARS menu on Mac OS menu bar
+        try {
+            System.setProperty("apple.laf.useScreenMenuBar", "true");
+            //System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Test");
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         new MarsSplashScreen(splashDuration).showSplash();
         SwingUtilities.invokeLater(
                 new Runnable() {

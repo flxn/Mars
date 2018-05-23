@@ -25,3 +25,5 @@ hs_err_pid*
 # IntelliJ folder
 out/
 .idea/
+
+MARS.app/
